@@ -791,28 +791,33 @@ public final class GradeServiceOuterClass {
 
   }
 
-  public interface GradeIdRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.grpc.grade.GradeIdRequest)
+  public interface StudentIdRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.example.grpc.grade.StudentIdRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 id = 1;</code>
+     * <code>string StudentId = 1;</code>
      */
-    int getId();
+    java.lang.String getStudentId();
+    /**
+     * <code>string StudentId = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getStudentIdBytes();
   }
   /**
-   * Protobuf type {@code com.example.grpc.grade.GradeIdRequest}
+   * Protobuf type {@code com.example.grpc.grade.StudentIdRequest}
    */
-  public  static final class GradeIdRequest extends
+  public  static final class StudentIdRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.grpc.grade.GradeIdRequest)
-      GradeIdRequestOrBuilder {
-    // Use GradeIdRequest.newBuilder() to construct.
-    private GradeIdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.example.grpc.grade.StudentIdRequest)
+      StudentIdRequestOrBuilder {
+    // Use StudentIdRequest.newBuilder() to construct.
+    private StudentIdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GradeIdRequest() {
-      id_ = 0;
+    private StudentIdRequest() {
+      studentId_ = "";
     }
 
     @java.lang.Override
@@ -820,7 +825,7 @@ public final class GradeServiceOuterClass {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private GradeIdRequest(
+    private StudentIdRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -840,9 +845,10 @@ public final class GradeServiceOuterClass {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readInt32();
+              studentId_ = s;
               break;
             }
           }
@@ -858,23 +864,48 @@ public final class GradeServiceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeIdRequest_descriptor;
+      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeIdRequest_fieldAccessorTable
+      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.class, com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.Builder.class);
+              com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.class, com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int STUDENTID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object studentId_;
     /**
-     * <code>int32 id = 1;</code>
+     * <code>string StudentId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public java.lang.String getStudentId() {
+      java.lang.Object ref = studentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        studentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string StudentId = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStudentIdBytes() {
+      java.lang.Object ref = studentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        studentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -889,8 +920,8 @@ public final class GradeServiceOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeInt32(1, id_);
+      if (!getStudentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, studentId_);
       }
     }
 
@@ -899,9 +930,8 @@ public final class GradeServiceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+      if (!getStudentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, studentId_);
       }
       memoizedSize = size;
       return size;
@@ -913,14 +943,14 @@ public final class GradeServiceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest)) {
+      if (!(obj instanceof com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest)) {
         return super.equals(obj);
       }
-      com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest other = (com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest) obj;
+      com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest other = (com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest) obj;
 
       boolean result = true;
-      result = result && (getId()
-          == other.getId());
+      result = result && getStudentId()
+          .equals(other.getStudentId());
       return result;
     }
 
@@ -931,76 +961,76 @@ public final class GradeServiceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (37 * hash) + STUDENTID_FIELD_NUMBER;
+      hash = (53 * hash) + getStudentId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(byte[] data)
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(java.io.InputStream input)
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseDelimitedFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1012,7 +1042,7 @@ public final class GradeServiceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest prototype) {
+    public static Builder newBuilder(com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1027,25 +1057,25 @@ public final class GradeServiceOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.grpc.grade.GradeIdRequest}
+     * Protobuf type {@code com.example.grpc.grade.StudentIdRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.grpc.grade.GradeIdRequest)
-        com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.example.grpc.grade.StudentIdRequest)
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeIdRequest_descriptor;
+        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeIdRequest_fieldAccessorTable
+        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.class, com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.Builder.class);
+                com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.class, com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.Builder.class);
       }
 
-      // Construct using com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.newBuilder()
+      // Construct using com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1062,31 +1092,31 @@ public final class GradeServiceOuterClass {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        studentId_ = "";
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeIdRequest_descriptor;
+        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdRequest_descriptor;
       }
 
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest getDefaultInstanceForType() {
-        return com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.getDefaultInstance();
+      public com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest getDefaultInstanceForType() {
+        return com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.getDefaultInstance();
       }
 
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest build() {
-        com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest result = buildPartial();
+      public com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest build() {
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest buildPartial() {
-        com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest result = new com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest(this);
-        result.id_ = id_;
+      public com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest buildPartial() {
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest result = new com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest(this);
+        result.studentId_ = studentId_;
         onBuilt();
         return result;
       }
@@ -1118,18 +1148,19 @@ public final class GradeServiceOuterClass {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest) {
-          return mergeFrom((com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest)other);
+        if (other instanceof com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest) {
+          return mergeFrom((com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest other) {
-        if (other == com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+      public Builder mergeFrom(com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest other) {
+        if (other == com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.getDefaultInstance()) return this;
+        if (!other.getStudentId().isEmpty()) {
+          studentId_ = other.studentId_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1143,11 +1174,11 @@ public final class GradeServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest parsedMessage = null;
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1157,28 +1188,71 @@ public final class GradeServiceOuterClass {
         return this;
       }
 
-      private int id_ ;
+      private java.lang.Object studentId_ = "";
       /**
-       * <code>int32 id = 1;</code>
+       * <code>string StudentId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public java.lang.String getStudentId() {
+        java.lang.Object ref = studentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          studentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 id = 1;</code>
+       * <code>string StudentId = 1;</code>
        */
-      public Builder setId(int value) {
-        
-        id_ = value;
+      public com.google.protobuf.ByteString
+          getStudentIdBytes() {
+        java.lang.Object ref = studentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          studentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string StudentId = 1;</code>
+       */
+      public Builder setStudentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        studentId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 id = 1;</code>
+       * <code>string StudentId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearStudentId() {
         
-        id_ = 0;
+        studentId_ = getDefaultInstance().getStudentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string StudentId = 1;</code>
+       */
+      public Builder setStudentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        studentId_ = value;
         onChanged();
         return this;
       }
@@ -1193,73 +1267,73 @@ public final class GradeServiceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.grpc.grade.GradeIdRequest)
+      // @@protoc_insertion_point(builder_scope:com.example.grpc.grade.StudentIdRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.grpc.grade.GradeIdRequest)
-    private static final com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.example.grpc.grade.StudentIdRequest)
+    private static final com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest();
+      DEFAULT_INSTANCE = new com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest();
     }
 
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest getDefaultInstance() {
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GradeIdRequest>
-        PARSER = new com.google.protobuf.AbstractParser<GradeIdRequest>() {
-      public GradeIdRequest parsePartialFrom(
+    private static final com.google.protobuf.Parser<StudentIdRequest>
+        PARSER = new com.google.protobuf.AbstractParser<StudentIdRequest>() {
+      public StudentIdRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GradeIdRequest(input, extensionRegistry);
+          return new StudentIdRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GradeIdRequest> parser() {
+    public static com.google.protobuf.Parser<StudentIdRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GradeIdRequest> getParserForType() {
+    public com.google.protobuf.Parser<StudentIdRequest> getParserForType() {
       return PARSER;
     }
 
-    public com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest getDefaultInstanceForType() {
+    public com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface GradeResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.grpc.grade.GradeResponse)
+  public interface StudentIdResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.example.grpc.grade.StudentIdResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+     * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
      */
-    boolean hasGrade();
+    boolean hasStudentId();
     /**
-     * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+     * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
      */
-    com.example.grpc.grade.GradeServiceOuterClass.Grade getGrade();
+    com.example.grpc.grade.GradeServiceOuterClass.Grade getStudentId();
     /**
-     * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+     * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
      */
-    com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder getGradeOrBuilder();
+    com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder getStudentIdOrBuilder();
   }
   /**
-   * Protobuf type {@code com.example.grpc.grade.GradeResponse}
+   * Protobuf type {@code com.example.grpc.grade.StudentIdResponse}
    */
-  public  static final class GradeResponse extends
+  public  static final class StudentIdResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.grpc.grade.GradeResponse)
-      GradeResponseOrBuilder {
-    // Use GradeResponse.newBuilder() to construct.
-    private GradeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.example.grpc.grade.StudentIdResponse)
+      StudentIdResponseOrBuilder {
+    // Use StudentIdResponse.newBuilder() to construct.
+    private StudentIdResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GradeResponse() {
+    private StudentIdResponse() {
     }
 
     @java.lang.Override
@@ -1267,7 +1341,7 @@ public final class GradeServiceOuterClass {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private GradeResponse(
+    private StudentIdResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1289,13 +1363,13 @@ public final class GradeServiceOuterClass {
             }
             case 10: {
               com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder subBuilder = null;
-              if (grade_ != null) {
-                subBuilder = grade_.toBuilder();
+              if (studentId_ != null) {
+                subBuilder = studentId_.toBuilder();
               }
-              grade_ = input.readMessage(com.example.grpc.grade.GradeServiceOuterClass.Grade.parser(), extensionRegistry);
+              studentId_ = input.readMessage(com.example.grpc.grade.GradeServiceOuterClass.Grade.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(grade_);
-                grade_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(studentId_);
+                studentId_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1313,35 +1387,35 @@ public final class GradeServiceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeResponse_descriptor;
+      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeResponse_fieldAccessorTable
+      return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.class, com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.Builder.class);
+              com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.class, com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.Builder.class);
     }
 
-    public static final int GRADE_FIELD_NUMBER = 1;
-    private com.example.grpc.grade.GradeServiceOuterClass.Grade grade_;
+    public static final int STUDENTID_FIELD_NUMBER = 1;
+    private com.example.grpc.grade.GradeServiceOuterClass.Grade studentId_;
     /**
-     * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+     * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
      */
-    public boolean hasGrade() {
-      return grade_ != null;
+    public boolean hasStudentId() {
+      return studentId_ != null;
     }
     /**
-     * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+     * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
      */
-    public com.example.grpc.grade.GradeServiceOuterClass.Grade getGrade() {
-      return grade_ == null ? com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance() : grade_;
+    public com.example.grpc.grade.GradeServiceOuterClass.Grade getStudentId() {
+      return studentId_ == null ? com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance() : studentId_;
     }
     /**
-     * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+     * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
      */
-    public com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder getGradeOrBuilder() {
-      return getGrade();
+    public com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder getStudentIdOrBuilder() {
+      return getStudentId();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1356,8 +1430,8 @@ public final class GradeServiceOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (grade_ != null) {
-        output.writeMessage(1, getGrade());
+      if (studentId_ != null) {
+        output.writeMessage(1, getStudentId());
       }
     }
 
@@ -1366,9 +1440,9 @@ public final class GradeServiceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (grade_ != null) {
+      if (studentId_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getGrade());
+          .computeMessageSize(1, getStudentId());
       }
       memoizedSize = size;
       return size;
@@ -1380,16 +1454,16 @@ public final class GradeServiceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.example.grpc.grade.GradeServiceOuterClass.GradeResponse)) {
+      if (!(obj instanceof com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse)) {
         return super.equals(obj);
       }
-      com.example.grpc.grade.GradeServiceOuterClass.GradeResponse other = (com.example.grpc.grade.GradeServiceOuterClass.GradeResponse) obj;
+      com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse other = (com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse) obj;
 
       boolean result = true;
-      result = result && (hasGrade() == other.hasGrade());
-      if (hasGrade()) {
-        result = result && getGrade()
-            .equals(other.getGrade());
+      result = result && (hasStudentId() == other.hasStudentId());
+      if (hasStudentId()) {
+        result = result && getStudentId()
+            .equals(other.getStudentId());
       }
       return result;
     }
@@ -1401,78 +1475,78 @@ public final class GradeServiceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasGrade()) {
-        hash = (37 * hash) + GRADE_FIELD_NUMBER;
-        hash = (53 * hash) + getGrade().hashCode();
+      if (hasStudentId()) {
+        hash = (37 * hash) + STUDENTID_FIELD_NUMBER;
+        hash = (53 * hash) + getStudentId().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(byte[] data)
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(java.io.InputStream input)
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseDelimitedFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parseFrom(
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1484,7 +1558,7 @@ public final class GradeServiceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.example.grpc.grade.GradeServiceOuterClass.GradeResponse prototype) {
+    public static Builder newBuilder(com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1499,25 +1573,25 @@ public final class GradeServiceOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.grpc.grade.GradeResponse}
+     * Protobuf type {@code com.example.grpc.grade.StudentIdResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.grpc.grade.GradeResponse)
-        com.example.grpc.grade.GradeServiceOuterClass.GradeResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.example.grpc.grade.StudentIdResponse)
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeResponse_descriptor;
+        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeResponse_fieldAccessorTable
+        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.class, com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.Builder.class);
+                com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.class, com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.Builder.class);
       }
 
-      // Construct using com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.newBuilder()
+      // Construct using com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1534,38 +1608,38 @@ public final class GradeServiceOuterClass {
       }
       public Builder clear() {
         super.clear();
-        if (gradeBuilder_ == null) {
-          grade_ = null;
+        if (studentIdBuilder_ == null) {
+          studentId_ = null;
         } else {
-          grade_ = null;
-          gradeBuilder_ = null;
+          studentId_ = null;
+          studentIdBuilder_ = null;
         }
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_GradeResponse_descriptor;
+        return com.example.grpc.grade.GradeServiceOuterClass.internal_static_com_example_grpc_grade_StudentIdResponse_descriptor;
       }
 
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeResponse getDefaultInstanceForType() {
-        return com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.getDefaultInstance();
+      public com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse getDefaultInstanceForType() {
+        return com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.getDefaultInstance();
       }
 
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeResponse build() {
-        com.example.grpc.grade.GradeServiceOuterClass.GradeResponse result = buildPartial();
+      public com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse build() {
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeResponse buildPartial() {
-        com.example.grpc.grade.GradeServiceOuterClass.GradeResponse result = new com.example.grpc.grade.GradeServiceOuterClass.GradeResponse(this);
-        if (gradeBuilder_ == null) {
-          result.grade_ = grade_;
+      public com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse buildPartial() {
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse result = new com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse(this);
+        if (studentIdBuilder_ == null) {
+          result.studentId_ = studentId_;
         } else {
-          result.grade_ = gradeBuilder_.build();
+          result.studentId_ = studentIdBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1598,18 +1672,18 @@ public final class GradeServiceOuterClass {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.grpc.grade.GradeServiceOuterClass.GradeResponse) {
-          return mergeFrom((com.example.grpc.grade.GradeServiceOuterClass.GradeResponse)other);
+        if (other instanceof com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse) {
+          return mergeFrom((com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.example.grpc.grade.GradeServiceOuterClass.GradeResponse other) {
-        if (other == com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.getDefaultInstance()) return this;
-        if (other.hasGrade()) {
-          mergeGrade(other.getGrade());
+      public Builder mergeFrom(com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse other) {
+        if (other == com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.getDefaultInstance()) return this;
+        if (other.hasStudentId()) {
+          mergeStudentId(other.getStudentId());
         }
         onChanged();
         return this;
@@ -1623,11 +1697,11 @@ public final class GradeServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.example.grpc.grade.GradeServiceOuterClass.GradeResponse parsedMessage = null;
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.grpc.grade.GradeServiceOuterClass.GradeResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1637,121 +1711,121 @@ public final class GradeServiceOuterClass {
         return this;
       }
 
-      private com.example.grpc.grade.GradeServiceOuterClass.Grade grade_ = null;
+      private com.example.grpc.grade.GradeServiceOuterClass.Grade studentId_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.grpc.grade.GradeServiceOuterClass.Grade, com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder, com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder> gradeBuilder_;
+          com.example.grpc.grade.GradeServiceOuterClass.Grade, com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder, com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder> studentIdBuilder_;
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public boolean hasGrade() {
-        return gradeBuilder_ != null || grade_ != null;
+      public boolean hasStudentId() {
+        return studentIdBuilder_ != null || studentId_ != null;
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public com.example.grpc.grade.GradeServiceOuterClass.Grade getGrade() {
-        if (gradeBuilder_ == null) {
-          return grade_ == null ? com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance() : grade_;
+      public com.example.grpc.grade.GradeServiceOuterClass.Grade getStudentId() {
+        if (studentIdBuilder_ == null) {
+          return studentId_ == null ? com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance() : studentId_;
         } else {
-          return gradeBuilder_.getMessage();
+          return studentIdBuilder_.getMessage();
         }
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public Builder setGrade(com.example.grpc.grade.GradeServiceOuterClass.Grade value) {
-        if (gradeBuilder_ == null) {
+      public Builder setStudentId(com.example.grpc.grade.GradeServiceOuterClass.Grade value) {
+        if (studentIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          grade_ = value;
+          studentId_ = value;
           onChanged();
         } else {
-          gradeBuilder_.setMessage(value);
+          studentIdBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public Builder setGrade(
+      public Builder setStudentId(
           com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder builderForValue) {
-        if (gradeBuilder_ == null) {
-          grade_ = builderForValue.build();
+        if (studentIdBuilder_ == null) {
+          studentId_ = builderForValue.build();
           onChanged();
         } else {
-          gradeBuilder_.setMessage(builderForValue.build());
+          studentIdBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public Builder mergeGrade(com.example.grpc.grade.GradeServiceOuterClass.Grade value) {
-        if (gradeBuilder_ == null) {
-          if (grade_ != null) {
-            grade_ =
-              com.example.grpc.grade.GradeServiceOuterClass.Grade.newBuilder(grade_).mergeFrom(value).buildPartial();
+      public Builder mergeStudentId(com.example.grpc.grade.GradeServiceOuterClass.Grade value) {
+        if (studentIdBuilder_ == null) {
+          if (studentId_ != null) {
+            studentId_ =
+              com.example.grpc.grade.GradeServiceOuterClass.Grade.newBuilder(studentId_).mergeFrom(value).buildPartial();
           } else {
-            grade_ = value;
+            studentId_ = value;
           }
           onChanged();
         } else {
-          gradeBuilder_.mergeFrom(value);
+          studentIdBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public Builder clearGrade() {
-        if (gradeBuilder_ == null) {
-          grade_ = null;
+      public Builder clearStudentId() {
+        if (studentIdBuilder_ == null) {
+          studentId_ = null;
           onChanged();
         } else {
-          grade_ = null;
-          gradeBuilder_ = null;
+          studentId_ = null;
+          studentIdBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder getGradeBuilder() {
+      public com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder getStudentIdBuilder() {
         
         onChanged();
-        return getGradeFieldBuilder().getBuilder();
+        return getStudentIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
-      public com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder getGradeOrBuilder() {
-        if (gradeBuilder_ != null) {
-          return gradeBuilder_.getMessageOrBuilder();
+      public com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder getStudentIdOrBuilder() {
+        if (studentIdBuilder_ != null) {
+          return studentIdBuilder_.getMessageOrBuilder();
         } else {
-          return grade_ == null ?
-              com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance() : grade_;
+          return studentId_ == null ?
+              com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance() : studentId_;
         }
       }
       /**
-       * <code>.com.example.grpc.grade.Grade grade = 1;</code>
+       * <code>.com.example.grpc.grade.Grade StudentId = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.grpc.grade.GradeServiceOuterClass.Grade, com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder, com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder> 
-          getGradeFieldBuilder() {
-        if (gradeBuilder_ == null) {
-          gradeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getStudentIdFieldBuilder() {
+        if (studentIdBuilder_ == null) {
+          studentIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.example.grpc.grade.GradeServiceOuterClass.Grade, com.example.grpc.grade.GradeServiceOuterClass.Grade.Builder, com.example.grpc.grade.GradeServiceOuterClass.GradeOrBuilder>(
-                  getGrade(),
+                  getStudentId(),
                   getParentForChildren(),
                   isClean());
-          grade_ = null;
+          studentId_ = null;
         }
-        return gradeBuilder_;
+        return studentIdBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1764,39 +1838,39 @@ public final class GradeServiceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.grpc.grade.GradeResponse)
+      // @@protoc_insertion_point(builder_scope:com.example.grpc.grade.StudentIdResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.grpc.grade.GradeResponse)
-    private static final com.example.grpc.grade.GradeServiceOuterClass.GradeResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.example.grpc.grade.StudentIdResponse)
+    private static final com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.example.grpc.grade.GradeServiceOuterClass.GradeResponse();
+      DEFAULT_INSTANCE = new com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse();
     }
 
-    public static com.example.grpc.grade.GradeServiceOuterClass.GradeResponse getDefaultInstance() {
+    public static com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GradeResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GradeResponse>() {
-      public GradeResponse parsePartialFrom(
+    private static final com.google.protobuf.Parser<StudentIdResponse>
+        PARSER = new com.google.protobuf.AbstractParser<StudentIdResponse>() {
+      public StudentIdResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GradeResponse(input, extensionRegistry);
+          return new StudentIdResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GradeResponse> parser() {
+    public static com.google.protobuf.Parser<StudentIdResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GradeResponse> getParserForType() {
+    public com.google.protobuf.Parser<StudentIdResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.example.grpc.grade.GradeServiceOuterClass.GradeResponse getDefaultInstanceForType() {
+    public com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1808,15 +1882,15 @@ public final class GradeServiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_example_grpc_grade_Grade_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_grpc_grade_GradeIdRequest_descriptor;
+    internal_static_com_example_grpc_grade_StudentIdRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_grpc_grade_GradeIdRequest_fieldAccessorTable;
+      internal_static_com_example_grpc_grade_StudentIdRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_grpc_grade_GradeResponse_descriptor;
+    internal_static_com_example_grpc_grade_StudentIdResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_grpc_grade_GradeResponse_fieldAccessorTable;
+      internal_static_com_example_grpc_grade_StudentIdResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1829,14 +1903,15 @@ public final class GradeServiceOuterClass {
       "\n\022GradeService.proto\022\026com.example.grpc.g" +
       "rade\"L\n\005Grade\022\n\n\002Id\030\001 \001(\005\022\016\n\006ExamId\030\002 \001(" +
       "\t\022\021\n\tStudentId\030\003 \001(\t\022\024\n\014StudentGrade\030\004 \001" +
-      "(\005\"\034\n\016GradeIdRequest\022\n\n\002id\030\001 \001(\005\"=\n\rGrad" +
-      "eResponse\022,\n\005grade\030\001 \001(\0132\035.com.example.g" +
-      "rpc.grade.Grade2\313\001\n\014GradeService\022f\n\025Fetc" +
-      "hGradeByStudentId\022&.com.example.grpc.gra" +
-      "de.GradeIdRequest\032%.com.example.grpc.gra" +
-      "de.GradeResponse\022S\n\013CreateGrade\022\035.com.ex" +
-      "ample.grpc.grade.Grade\032%.com.example.grp",
-      "c.grade.GradeResponseb\006proto3"
+      "(\005\"%\n\020StudentIdRequest\022\021\n\tStudentId\030\001 \001(" +
+      "\t\"E\n\021StudentIdResponse\0220\n\tStudentId\030\001 \001(" +
+      "\0132\035.com.example.grpc.grade.Grade2\325\001\n\014Gra" +
+      "deService\022l\n\025FetchGradeByStudentId\022(.com" +
+      ".example.grpc.grade.StudentIdRequest\032).c" +
+      "om.example.grpc.grade.StudentIdResponse\022" +
+      "W\n\013CreateGrade\022\035.com.example.grpc.grade.",
+      "Grade\032).com.example.grpc.grade.StudentId" +
+      "Responseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1856,18 +1931,18 @@ public final class GradeServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_grpc_grade_Grade_descriptor,
         new java.lang.String[] { "Id", "ExamId", "StudentId", "StudentGrade", });
-    internal_static_com_example_grpc_grade_GradeIdRequest_descriptor =
+    internal_static_com_example_grpc_grade_StudentIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_example_grpc_grade_GradeIdRequest_fieldAccessorTable = new
+    internal_static_com_example_grpc_grade_StudentIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_grpc_grade_GradeIdRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_com_example_grpc_grade_GradeResponse_descriptor =
+        internal_static_com_example_grpc_grade_StudentIdRequest_descriptor,
+        new java.lang.String[] { "StudentId", });
+    internal_static_com_example_grpc_grade_StudentIdResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_com_example_grpc_grade_GradeResponse_fieldAccessorTable = new
+    internal_static_com_example_grpc_grade_StudentIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_grpc_grade_GradeResponse_descriptor,
-        new java.lang.String[] { "Grade", });
+        internal_static_com_example_grpc_grade_StudentIdResponse_descriptor,
+        new java.lang.String[] { "StudentId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

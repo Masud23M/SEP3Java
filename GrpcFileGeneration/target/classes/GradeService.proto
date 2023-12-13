@@ -4,10 +4,10 @@ package com.example.grpc.grade;
 
 service GradeService {
   // Fetch a grade by Student ID
-  rpc FetchGradeByStudentId(GradeIdRequest) returns (GradeResponse);
+  rpc FetchGradeByStudentId(StudentIdRequest) returns (StudentIdResponse);
 
   // Create a new grade
-  rpc CreateGrade(Grade) returns (GradeResponse);
+  rpc CreateGrade(Grade) returns (StudentIdResponse);
 
 }
 
@@ -18,10 +18,10 @@ message Grade {
   int32 StudentGrade = 4;
 }
 
-message GradeIdRequest {
-  int32 id = 1;
+message StudentIdRequest {
+  string StudentId = 1;
 }
 
-message GradeResponse {
-  Grade grade = 1;
+message StudentIdResponse {
+  Grade StudentId = 1;
 }

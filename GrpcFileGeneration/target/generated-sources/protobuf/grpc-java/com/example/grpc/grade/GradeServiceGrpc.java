@@ -28,28 +28,28 @@ public final class GradeServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest,
-      com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> METHOD_FETCH_GRADE_BY_STUDENT_ID =
-      io.grpc.MethodDescriptor.<com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest, com.example.grpc.grade.GradeServiceOuterClass.GradeResponse>newBuilder()
+  public static final io.grpc.MethodDescriptor<com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest,
+      com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> METHOD_FETCH_GRADE_BY_STUDENT_ID =
+      io.grpc.MethodDescriptor.<com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest, com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
               "com.example.grpc.grade.GradeService", "FetchGradeByStudentId"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest.getDefaultInstance()))
+              com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.getDefaultInstance()))
+              com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<com.example.grpc.grade.GradeServiceOuterClass.Grade,
-      com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> METHOD_CREATE_GRADE =
-      io.grpc.MethodDescriptor.<com.example.grpc.grade.GradeServiceOuterClass.Grade, com.example.grpc.grade.GradeServiceOuterClass.GradeResponse>newBuilder()
+      com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> METHOD_CREATE_GRADE =
+      io.grpc.MethodDescriptor.<com.example.grpc.grade.GradeServiceOuterClass.Grade, com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
               "com.example.grpc.grade.GradeService", "CreateGrade"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
               com.example.grpc.grade.GradeServiceOuterClass.Grade.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.example.grpc.grade.GradeServiceOuterClass.GradeResponse.getDefaultInstance()))
+              com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse.getDefaultInstance()))
           .build();
 
   /**
@@ -84,8 +84,8 @@ public final class GradeServiceGrpc {
      * Fetch a grade by Student ID
      * </pre>
      */
-    public void fetchGradeByStudentId(com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest request,
-        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> responseObserver) {
+    public void fetchGradeByStudentId(com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_FETCH_GRADE_BY_STUDENT_ID, responseObserver);
     }
 
@@ -95,7 +95,7 @@ public final class GradeServiceGrpc {
      * </pre>
      */
     public void createGrade(com.example.grpc.grade.GradeServiceOuterClass.Grade request,
-        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_CREATE_GRADE, responseObserver);
     }
 
@@ -105,15 +105,15 @@ public final class GradeServiceGrpc {
             METHOD_FETCH_GRADE_BY_STUDENT_ID,
             asyncUnaryCall(
               new MethodHandlers<
-                com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest,
-                com.example.grpc.grade.GradeServiceOuterClass.GradeResponse>(
+                com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest,
+                com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse>(
                   this, METHODID_FETCH_GRADE_BY_STUDENT_ID)))
           .addMethod(
             METHOD_CREATE_GRADE,
             asyncUnaryCall(
               new MethodHandlers<
                 com.example.grpc.grade.GradeServiceOuterClass.Grade,
-                com.example.grpc.grade.GradeServiceOuterClass.GradeResponse>(
+                com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse>(
                   this, METHODID_CREATE_GRADE)))
           .build();
     }
@@ -142,8 +142,8 @@ public final class GradeServiceGrpc {
      * Fetch a grade by Student ID
      * </pre>
      */
-    public void fetchGradeByStudentId(com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest request,
-        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> responseObserver) {
+    public void fetchGradeByStudentId(com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest request,
+        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_FETCH_GRADE_BY_STUDENT_ID, getCallOptions()), request, responseObserver);
     }
@@ -154,7 +154,7 @@ public final class GradeServiceGrpc {
      * </pre>
      */
     public void createGrade(com.example.grpc.grade.GradeServiceOuterClass.Grade request,
-        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_CREATE_GRADE, getCallOptions()), request, responseObserver);
     }
@@ -183,7 +183,7 @@ public final class GradeServiceGrpc {
      * Fetch a grade by Student ID
      * </pre>
      */
-    public com.example.grpc.grade.GradeServiceOuterClass.GradeResponse fetchGradeByStudentId(com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest request) {
+    public com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse fetchGradeByStudentId(com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_FETCH_GRADE_BY_STUDENT_ID, getCallOptions(), request);
     }
@@ -193,7 +193,7 @@ public final class GradeServiceGrpc {
      * Create a new grade
      * </pre>
      */
-    public com.example.grpc.grade.GradeServiceOuterClass.GradeResponse createGrade(com.example.grpc.grade.GradeServiceOuterClass.Grade request) {
+    public com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse createGrade(com.example.grpc.grade.GradeServiceOuterClass.Grade request) {
       return blockingUnaryCall(
           getChannel(), METHOD_CREATE_GRADE, getCallOptions(), request);
     }
@@ -222,8 +222,8 @@ public final class GradeServiceGrpc {
      * Fetch a grade by Student ID
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> fetchGradeByStudentId(
-        com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> fetchGradeByStudentId(
+        com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_FETCH_GRADE_BY_STUDENT_ID, getCallOptions()), request);
     }
@@ -233,7 +233,7 @@ public final class GradeServiceGrpc {
      * Create a new grade
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse> createGrade(
+    public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse> createGrade(
         com.example.grpc.grade.GradeServiceOuterClass.Grade request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_CREATE_GRADE, getCallOptions()), request);
@@ -261,12 +261,12 @@ public final class GradeServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_FETCH_GRADE_BY_STUDENT_ID:
-          serviceImpl.fetchGradeByStudentId((com.example.grpc.grade.GradeServiceOuterClass.GradeIdRequest) request,
-              (io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse>) responseObserver);
+          serviceImpl.fetchGradeByStudentId((com.example.grpc.grade.GradeServiceOuterClass.StudentIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse>) responseObserver);
           break;
         case METHODID_CREATE_GRADE:
           serviceImpl.createGrade((com.example.grpc.grade.GradeServiceOuterClass.Grade) request,
-              (io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.GradeResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.example.grpc.grade.GradeServiceOuterClass.StudentIdResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
